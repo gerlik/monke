@@ -3,5 +3,8 @@ Just heard you can make your own discord bots (super late to the party) and want
 
 - Battle with the monkey
 - Summon random monkey file 😈
-TODO:
--
+
+
+todo:
+- Works in Heroku but not 24/7
+- resources folder might be unreachable

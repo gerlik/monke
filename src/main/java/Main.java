@@ -27,9 +27,9 @@ public class Main extends ListenerAdapter {
         if (event.getMessage().getContentRaw().equals("!mcommands")) {
             event.getChannel().sendMessage("!ok" + "\ntest" + "\n!roll" + "\nmonke/monkey/bloons time/bloons/b").queue();
         }
-//        if (event.getMessage().getContentRaw().equals("!ping")) {
-//            event.getChannel().sendMessage("Pong!").queue();
-//        }
+        if (event.getMessage().getContentRaw().equals("!ping")) {
+            event.getChannel().sendMessage("Pong!").queue();
+        }
 
         if (event.getMessage().getContentRaw().equals("!ok")) {
             event.getChannel().sendMessage("Not ok!").queue();
@@ -44,7 +44,12 @@ public class Main extends ListenerAdapter {
         }
 
         // Shuffle random monkey file
-        if (event.getMessage().getContentRaw().contains("bloons time") || event.getMessage().getContentRaw().contains("bloons") || event.getMessage().getContentRaw().equals("b") || event.getMessage().getContentRaw().contains("monke")) {
+        if (event.getMessage().getContentRaw().contains("bloons time") ||
+                event.getMessage().getContentRaw().contains("bloons") ||
+                event.getMessage().getContentRaw().equals("b") ||
+                event.getMessage().getContentRaw().contains("monke") ||
+                event.getMessage().getContentRaw().contains("monki")
+        ) {
             try {
                 File directory = new File("src/main/resources/");
                 File[] allFiles = directory.listFiles();
@@ -78,6 +83,11 @@ public class Main extends ListenerAdapter {
             } catch (Exception e) {
                 System.out.println(e);
             }
+        }
+
+        // Play theme song
+        if (event.getMessage().getContentRaw().contains("bloons")) {
+            event.getChannel().sendMessage("https://youtu.be/CXXb7tpnLmM").queue();
         }
 
         // Draw sth maybe
